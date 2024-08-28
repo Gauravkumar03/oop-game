@@ -7,7 +7,7 @@
 class Game {
     constructor() {
         this.missed = 0
-        this.phrases = ['I love you', 'Never give up', 'Work like hell', 'Chill Out', 'Stay Strong']
+        this.phrases = [new Phrase('I love you'), new Phrase('Never give up'), new Phrase('Work like hell'), new Phrase('Chill Out'), new Phrase('Stay Strong')]
         this.activePhrase = null
     }
 
@@ -18,7 +18,7 @@ class Game {
     startGame() {
         document.getElementById('overlay').style.display = 'none'
         const randomPhrase = this.getRandomPhrase()
-        const phrase = new Phrase(randomPhrase)
+        const phrase = new Phrase(randomPhrase.phrase)
         this.activePhrase = phrase
         phrase.addPhraseToDisplay()
         
